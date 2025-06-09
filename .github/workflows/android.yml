@@ -11,21 +11,25 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      - name: Move into Flutter app directory
+        run: cd Loganathans_Rental_Manager_Flutter_App
+
       - name: Set up Flutter
         uses: subosito/flutter-action@v2
         with:
           flutter-version: '3.22.0'
 
       - name: Install dependencies
-        working-directory: Loganathans_Rental_Manager_Flutter_App
         run: flutter pub get
+        working-directory: Loganathans_Rental_Manager_Flutter_App
 
       - name: Build APK
-        working-directory: Loganathans_Rental_Manager_Flutter_App
         run: flutter build apk --release
+        working-directory: Loganathans_Rental_Manager_Flutter_App
 
       - name: Upload APK artifact
         uses: actions/upload-artifact@v4
         with:
           name: release-apk
           path: Loganathans_Rental_Manager_Flutter_App/build/app/outputs/flutter-apk/app-release.apk
+
