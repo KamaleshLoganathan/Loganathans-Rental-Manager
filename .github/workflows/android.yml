@@ -11,9 +11,6 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Move into Flutter app directory
-        run: cd Loganathans_Rental_Manager_Flutter_App
-
       - name: Set up Flutter
         uses: subosito/flutter-action@v2
         with:
