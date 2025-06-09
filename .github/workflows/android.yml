@@ -18,15 +18,15 @@ jobs:
 
       - name: Install dependencies
         run: flutter pub get
-        working-directory: Loganathans_Rental_Manager_Flutter_App
+        working-directory: Loganathans_Rental_Manager_Flutter_App(1)
 
       - name: Build APK
         run: flutter build apk --release
-        working-directory: Loganathans_Rental_Manager_Flutter_App
+        working-directory: Loganathans_Rental_Manager_Flutter_App(1)
 
       - name: Upload APK artifact
         uses: actions/upload-artifact@v4
         with:
           name: release-apk
-          path: Loganathans_Rental_Manager_Flutter_App/build/app/outputs/flutter-apk/app-release.apk
+          path: Loganathans_Rental_Manager_Flutter_App(1)/build/app/outputs/flutter-apk/app-release.apk
 
